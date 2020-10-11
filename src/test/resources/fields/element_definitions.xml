@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../fields/xsd/element_rules.xsd">
+    <Page name="Главная">
+        <TextInput name="Строка поиска" locator="//input[@aria-label='Запрос' and @id='text']"/>
+        <Button name="Найти" locator="//button[.//*[text()='Найти']]"/>
+    </Page>
+    <Page name="Резульат поиска">
+        <StaticText name="Дополнительная информация по запросу" locator=".//*[@aria-label='Дополнительная информация по запросу']" isLoaded="true"/>
+        <Collection name="Список результатов" locator="//ul[@aria-label='Результаты поиска']/li">
+            <StaticText name="Заголовок" locator=".//*[contains(@class, '__url-text')]"/>
+            <Link name="Ссылка" locator=".//a[contains(@class, 'link_theme_outer')]/b"/>
+        </Collection>
+    </Page>
+    <Page name="Главная страница">
+        <Collection name="Главное меню" locator="//ul[@class='main-menu']//li">
+            <Button name="Наименование" locator="."/>
+        </Collection>
+        <Collection name="Подменю" locator="//a[contains(@class,'menu-link main')][@href]">
+            <Button name="Наименование" locator="."/>
+        </Collection>
+    </Page>
+    <Page name="Ипотека">
+        <Button name="Оставить заявку" locator="//div[@class = 'b-intro__block-buttons']//a[text()='Оставить заявку']"/>
+    </Page>
+    <Page name="Заполнение формы на ипотеку">
+        <StaticText name="Заголовок" locator="//*[text()='Заполнение заявки']"/>
+        <TextInput name="Имя"/>
+        <TextInput name="Фамилия"/>
+        <TextInput name="Отчество"/>
+        <TextInput name="E-mail"/>
+        <TextInput name="Место рождения"/>
+        <TextInput name="Дата рождения"/>
+        <TextInput name="Серия и номер паспорта"/>
+        <TextInput name="Код подразделения"/>
+        <TextInput name="Дата выдачи"/>
+        <TextInput name="Кем выдан"/>
+        <TextInput name="Адрес регистрации"/>
+        <TextInput name="Ежемесячный доход"/>
+        <TextInput name="Телефон"/>
+        <ComboBox name="Могу подтвердить с помощью"
+                  locator="//div[text()='Могу подтвердить с помощью']/../div[@data-marker-field='acceptSalary']"/>
+        <Button name="Продолжить" locator="//*[text()='Продолжить']"/>
+    </Page>
+</Pages>
